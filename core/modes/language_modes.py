@@ -8,11 +8,11 @@ mod = Module()
 # commented out entries. TODO: make this a csv file?
 language_extensions = {
     # 'assembly': 'asm s',
-    # 'bash': 'bashbook sh',
+    'bash': 'bashbook sh',
     "batch": "bat",
     "c": "c h",
     # 'cmake': 'cmake',
-    # 'cplusplus': 'cpp hpp',
+    'cplusplus': 'cpp hpp',
     "csharp": "cs",
     "css": "css",
     # 'elisp': 'el',

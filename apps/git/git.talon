@@ -1,5 +1,6 @@
 tag: terminal
 and tag: user.git
+and not tag: user.vim
 -
 git {user.git_command} [<user.git_arguments>]:
     args = git_arguments or ""
@@ -21,29 +22,38 @@ git show head$: "git show HEAD\n"
 git diff$: "git diff\n"
 git diff (cached | cashed)$: "git diff --cached\n"
 
+git add all: "git add -a"
+git commit: "git commit -m "
+git pull: "git pull"
+git pull main: "git pull origin main"
+git push: "git push"
+git checkout: "git checkout"
+git log: "git log"
+git fetch: "git fetch"
+
 # Convenience
 git clone clipboard:
     insert("git clone ")
     edit.paste()
-    key(enter)
+git checkout clipboard:
+    insert("git fetch")
+    key("enter")
+    insert("git checkout ")
+    edit.paste()
 git diff highlighted:
     edit.copy()
     insert("git diff ")
     edit.paste()
-    key(enter)
 git diff clipboard:
     insert("git diff ")
     edit.paste()
-    key(enter)
 git add highlighted:
     edit.copy()
     insert("git add ")
     edit.paste()
-    key(enter)
 git add clipboard:
     insert("git add ")
     edit.paste()
-    key(enter)
 git commit highlighted:
     edit.copy()
     insert("git add ")

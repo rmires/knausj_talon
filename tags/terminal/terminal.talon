@@ -1,4 +1,5 @@
 tag: terminal
+and not tag: user.vim
 -
 # tags should be activated for each specific terminal in the respective talon file
 

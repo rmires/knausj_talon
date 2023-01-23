@@ -28,8 +28,7 @@
 tag: user.wsl
 -
 
-tag(): terminal
-tag(): user.file_manager
+tag(): user.unix_utilities
 tag(): user.generic_unix_shell
 tag(): user.git
 tag(): user.kubectl

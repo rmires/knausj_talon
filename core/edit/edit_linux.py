@@ -5,6 +5,8 @@ from talon import Context, actions
 ctx = Context()
 ctx.matches = r"""
 os: linux
+not tag: user.readline
+and not tag: terminal
 """
 
 
@@ -116,6 +118,9 @@ class EditActions:
     def line_end():
         actions.key("end")
 
+    def line_insert_down():
+        actions.key("end enter")
+
     def line_insert_up():
         actions.key("home enter up")
 
@@ -170,6 +175,7 @@ class EditActions:
         # action(edit.select_sentence):
 
     def select_word():
+        # actions.key("ctrl-shift-left")
         actions.edit.right()
         actions.edit.word_left()
         actions.edit.extend_word_right()
@@ -194,3 +200,25 @@ class EditActions:
 
     def zoom_reset():
         actions.key("ctrl-0")
+
+
+@ctx.action_class("user")
+class UserActions:
+    def delete_word_right():
+        actions.edit.extend_word_right()
+        actions.edit.delete()
+        # XXX - only relevant for editors that have highlighting
+
+    def delete_word_left():
+        actions.edit.extend_word_left()
+        actions.edit.delete()
+
+    def delete_line_beginning():
+        actions.edit.extend_line_start()
+        actions.edit.delete()
+
+    def delete_line_remaining():
+        actions.edit.extend_line_beginning()
+        actions.edit.delete()
+        # action(edit.extend_again):
+        # action(edit.extend_column):

@@ -13,6 +13,7 @@ tagList = [
     "readline",
     "taskwarrior",  # commandline tag for taskwarrior commands
     "tmux",
+    "docker",
     "windbg",
 ]
 for entry in tagList:

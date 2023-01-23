@@ -1,4 +1,4 @@
-control mouse: user.mouse_toggle_control_mouse()
+control mouse | mouse control: user.mouse_toggle_control_mouse()
 zoom mouse: user.mouse_toggle_zoom_mouse()
 camera overlay: user.mouse_toggle_camera_overlay()
 run calibration: user.mouse_calibrate()
@@ -108,6 +108,3 @@ wheel tiny right here:
     user.mouse_move_center_active_window()
     user.mouse_scroll_right(0.5)
 copy mouse position: user.copy_mouse_position()
-curse no:
-    # Command added 2021-12-13, can remove after 2022-06-01
-    app.notify("Please activate the user.mouse_cursor_commands_enable tag to enable this command")
